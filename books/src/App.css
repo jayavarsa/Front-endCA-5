@@ -32,6 +32,7 @@
   /* height: 410px; */
   transition: box-shadow 0.3s ease-in-out;
   overflow: hidden;
+  /* z-index: -1; */
 }
 .rating_div img{
   height: 12px;
@@ -143,6 +144,7 @@ img {
   width: 100vw;
   height: 4rem;
   background-color: white;
+  z-index: 1;
 }
 
 .menu {
@@ -370,5 +372,4 @@ footer{
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
