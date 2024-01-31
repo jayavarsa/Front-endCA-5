@@ -7,7 +7,9 @@ import Register from './Register'
 function Allroutes() {
   return (
     <Routes>
-        <Route path="/" element={< Books />} />
+        {/* main page */}
+        <Route path="/" element={< Books />} /> 
+        {/* sign up page */}
         < Route path='/signup' element={< Register/>}></Route>
     </Routes>
   )

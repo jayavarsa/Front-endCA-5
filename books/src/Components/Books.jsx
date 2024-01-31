@@ -1,16 +1,19 @@
+// importing required modules and files
 import React, { useState, useEffect } from 'react';
 import kal from '../assets/kal.png'
 import star from "../assets/star.png";
 import { Link } from 'react-router-dom';
 import { BiSearch, BiArrowBack } from 'react-icons/bi';
 
+// main functional component
 function Books() {
+//  setting state for search input value and books array 
   const [books, setBooks] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [scrolled, setScrolled] = useState(false);
 
   
-
+// code to fetch data from the api
   useEffect(() => {
     fetch('https://reactnd-books-api.udacity.com/books', {
       headers: {
@@ -32,10 +35,17 @@ function Books() {
     });
   },[]);
 
+//    function that handles search event
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
   };
 
+  // filtre books name according to the input giving  by user
+  const searchbyBooks = books.filter(book =>
+    book.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+//   event which handles the scroll
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 0;
@@ -51,9 +61,7 @@ function Books() {
 
   
 
-  const searchbyBooks = books.filter(book =>
-    book.title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+// Code to make nav bar responsive and animated
   const toggleMenu = () => {
     const navbarMenu = document.getElementById("menu");
     const bgOverlay = document.querySelector(".overlay");
@@ -80,8 +88,9 @@ function Books() {
 
   return (
     <>  
-      <nav className={`navbar container ${scrolled ? 'shadow' : ''}`}>
-        <a  className="brand"> <img src={kal} alt="" /> </a>
+    {/* nav bar  */}
+      <nav className={`navbar container ${scrolled ? 'shadow' : ''}`}> 
+        <a  className="brand"> <img src={kal} alt="" /> </a> 
         <div className="burger" id="burger" onClick={toggleMenu}>
             <span className="burger-line"></span>
             <span className="burger-line"></span>
@@ -103,7 +112,9 @@ function Books() {
             </form>
         </div>
       </nav>
+      {/* main div for the books */}
       <div className='books'>
+        {/* divs for each books */}
         {searchbyBooks.map((book) => (
           <div key={book.id} className='one_book'>
             <div className='thum'>
@@ -120,6 +131,7 @@ function Books() {
           </div>  
         ))}
       </div>
+      {/* footer section */}
       <footer>
         <p>Made with ❤️ by Jayavarsan.😎</p>
       </footer>
