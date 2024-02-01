@@ -63,8 +63,8 @@ function Register() {
 
         {/* submit button */}
         
-        <input type="submit" value={"Sign Up"} />
-        
+        <input type="submit" className={submitted ? 'Hide_signup' : ''} value={"Sign Up"}/>
+        {submitted && <h3 >Signed in successfully</h3>}
       {/* button only vivble on complition of form */}
         <Link to={"/"}>{submitted &&  <button className='back_home' type="button">🔙 Back to home</button>} </Link> {/* Conditionally render the button */}
       </form>

@@ -391,10 +391,14 @@ input[type="submit"]:hover {
   }
 }
 
+.Hide_signup{
+  display:none;
+}
+
 
 /* -----------------------------footer css----------------------------------- */
 
-footer{
+/* footer{
   width: 100vw;
   text-align: center;
   font-size: larger;
@@ -403,4 +407,4 @@ footer{
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */

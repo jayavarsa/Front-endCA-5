@@ -84,6 +84,8 @@ function Books() {
   const closeSearch = () => {
     const searchBlock = document.querySelector(".search-block");
     searchBlock.classList.remove("is-active");
+    setSearchTerm('');
+
   };
 
   return (
@@ -107,7 +109,7 @@ function Books() {
         <span onClick={toggleSearch}><BiSearch className="search-toggle" /></span>
         <div className="search-block">
             <form className="search-form">
-                <span value={searchTerm} onChange={handleSearch} onClick={closeSearch}><BiArrowBack className="search-cancel" /></span>
+                <span  onClick={closeSearch}><BiArrowBack className="search-cancel" /></span>
             <input id="search-bar" type="search" value={searchTerm} onChange={handleSearch} name="search" className="search-input" placeholder="Search here..." />
             </form>
         </div>
@@ -132,9 +134,9 @@ function Books() {
         ))}
       </div>
       {/* footer section */}
-      <footer>
+      {/* <footer>
         <p>Made with ❤️ by Jayavarsan.😎</p>
-      </footer>
+      </footer> */}
     </>
   );
 }
