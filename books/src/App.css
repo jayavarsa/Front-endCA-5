@@ -23,6 +23,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  min-height: 94vh;
   
 }
 
@@ -398,13 +399,10 @@ input[type="submit"]:hover {
 
 /* -----------------------------footer css----------------------------------- */
 
-/* footer{
+footer{
   width: 100vw;
   text-align: center;
   font-size: larger;
-  background-color: rgb(194, 191, 191);
-  height: 4vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
+  color: grey;
+  margin-top: 3vh;
+}

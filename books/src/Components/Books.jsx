@@ -134,9 +134,9 @@ function Books() {
         ))}
       </div>
       {/* footer section */}
-      {/* <footer>
-        <p>Made with ❤️ by Jayavarsan.😎</p>
-      </footer> */}
+      <footer>
+        <p>Made by Jayavarsan</p>
+      </footer>
     </>
   );
 }
